@@ -7,9 +7,12 @@
     "develop": "strapi develop",
     "start": "strapi start",
     "build": "strapi build",
-    "strapi": "strapi"
+    "strapi": "strapi",
+    "format": "npx prettier --check ./config"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "prettier": "^2.4.1"
+  },
   "dependencies": {
     "strapi": "3.6.8",
     "strapi-admin": "3.6.8",

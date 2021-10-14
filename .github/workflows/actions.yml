@@ -39,10 +39,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Load Secrets
-        run: envsubst < test.temp > app.yaml | cat app.yaml
-        with: # Set the secret as an input
+        env: # Set the secret as an input
           myname: ${{ secrets.NAME }}
           mypass: ${{ secrets.PASS }}
+        run: envsubst < test.temp > app.yaml | cat app.yaml
       - name: Delete app.yaml
         run: rm -f app.yaml
   

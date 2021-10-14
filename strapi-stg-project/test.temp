@@ -1,5 +1,5 @@
 test テスト
 
 
-  DATABASE_USERNAME: ${{secrets.NAME}}
-  DATABASE_PASSWORD: ${{secrets.PASS}}
+  DATABASE_USERNAME: $myname
+  DATABASE_PASSWORD: $mypass

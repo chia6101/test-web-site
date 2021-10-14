@@ -31,6 +31,7 @@ jobs:
   app-deploy:
     name: '環境変数総置換テスト'
     runs-on: ubuntu-latest
+    needs: [app-lint]
     defaults:
       run:
         working-directory: strapi-stg-project

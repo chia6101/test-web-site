@@ -13,9 +13,17 @@ jobs:
   app-lint:
     name: 'Npm Lint'
     runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
+    strategy:
+     matrix:
+       node-version: [14.x]
+   steps:
+     - uses: actions/checkout@v2
+       with:
+         persist-credentials: false
+     - name: Setup Node.js ${{ matrix.node-version }}
+       uses: actions/setup-node@v2
+       with:
+         node-version: ${{ matrix.node-version }}
       - name: Prettier
         run: npm run format
   app-deploy:
